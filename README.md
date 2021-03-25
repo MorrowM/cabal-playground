@@ -5,7 +5,7 @@ Quickly set up a temporary [cabal](https://cabal.readthedocs.io/) project for pl
 ## Usage
 
 ```
-cabal-playground [PKG1 PKG2 PKG3]
+cabal-playground [PKG1 PKG2 PKG3 ...]
 ```
 
 For example:
