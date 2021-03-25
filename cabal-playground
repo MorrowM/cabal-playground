@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PLAYGROUNDS_DIR="/tmp/cabal-playgrounds"
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+PROJECT_NAME="playground${TIMESTAMP}"
+PROJECT_DIR="${PLAYGROUNDS_DIR}/${PROJECT_NAME}"
+
+mkdir -p $PROJECT_DIR
+cd $PROJECT_DIR
+cabal init --lib
+cabal-edit add $@
+$EDITOR  $PROJECT_DIR
