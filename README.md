@@ -16,18 +16,6 @@ cabal-playground text containers lens
 
 ## Installation
 
-### Dependencies
-
-Install `cabal-edit` using [cabal](https://cabal.readthedocs.io/):
-
-```
-cabal install cabal-edit
-```
-
-Make sure that `$HOME/.cabal/bin/` is in your `$PATH`.
-
-### Install
-
 Make the `cabal-playground` script executable with `chmod +x cabal-playground` and place it anywhere on your `$PATH`. Make sure `$EDITOR` is configured to your favorite text editor that can handle opening directories.
 
 ## Acknowledgements
