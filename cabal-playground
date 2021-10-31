@@ -13,5 +13,5 @@ for pkg in $@ ; do
   pkgflags="${pkgflags} -d ${pkg}"
 done
 
-cabal init --libandexe -d base $pkgflags
-$EDITOR  $PROJECT_DIR
+cabal init --exe -d base $pkgflags
+code $PROJECT_DIR 
