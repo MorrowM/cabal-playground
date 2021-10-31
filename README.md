@@ -16,7 +16,7 @@ cabal-playground text containers lens
 
 ## Installation
 
-Make the `cabal-playground` script executable with `chmod +x cabal-playground` and place it anywhere on your `$PATH`. Make sure `$EDITOR` is configured to your favorite text editor that can handle opening directories.
+Make the `cabal-playground` script executable with `chmod +x cabal-playground` and place it anywhere on your `$PATH`. Optionally install [`cabal-fmt`](https://github.com/phadej/cabal-fmt).
 
 ## Acknowledgements
 
