@@ -14,5 +14,6 @@ for pkg in $@ ; do
 done
 
 cabal init --exe -p tmp --version 0.1 -n -q -x tmp.cabal --application-dir . -m -d base $pkgflags
+cabal-fmt --inplace tmp.cabal
 echo "Successfully created cabal project in $PROJECT_DIR"
 code $PROJECT_DIR 
