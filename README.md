@@ -30,4 +30,4 @@ As this is just a simple shell script, this is only supported on Linux and MacOS
 
 ## Acknowledgments
 
-Inspired by [this blog post](https://www.greyblake.com/blog/2021-03-12-rust-playground-at-your-fingertips/) by Sergey Potapov.
+Inspired by [this blog post](https://www.greyblake.com/blog/rust-playground-at-your-fingertips/) by Sergey Potapov.
