@@ -1,5 +1,6 @@
 #!/bin/sh
 
+PLAYGROUND_EDITOR=${PLAYGROUND_EDITOR:-${EDITOR:-vi}}
 PLAYGROUNDS_DIR="$HOME/.local/share/cabal-playground"
 TIMESTAMP=$(date +"%Y-%m-%d-%H_%M_%S")
 PROJECT_NAME="playground-${TIMESTAMP}"
@@ -14,7 +15,7 @@ for pkg in $@ ; do
 done
 
 cabal init --exe -p playground --version 0.1 -n -q -x deleteme --application-dir . -m -d base $pkgflags
-cabal-fmt --inplace playground.cabal
 sed -i /extra-source-files:/d playground.cabal
+[ -x "$(command -v cabal-fmt)" ] && cabal-fmt --inplace playground.cabal
 echo "Successfully created cabal project in $PROJECT_DIR"
-code $PROJECT_DIR 
+$PLAYGROUND_EDITOR $PROJECT_DIR 
