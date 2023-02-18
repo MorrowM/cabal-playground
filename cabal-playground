@@ -9,13 +9,18 @@ PROJECT_DIR="${PLAYGROUNDS_DIR}/${PROJECT_NAME}"
 mkdir -p $PROJECT_DIR
 cd $PROJECT_DIR
 
+$PLAYGROUND_EDITOR $PROJECT_DIR 
+
 pkgflags=""
 for pkg in $@ ; do
   pkgflags="${pkgflags} -d ${pkg}"
 done
 
-cabal init --exe -p playground --version 0.1 -n -q -x deleteme --application-dir . -m -d base $pkgflags
+cabal init --exe --quiet -p playground --version 0.1 --cabal-version 2.4 --language GHC2021 -n -x deleteme --application-dir . -m -d base $pkgflags
 sed -i /extra-source-files:/d playground.cabal
+sed -i /extra-doc-files:/d playground.cabal
+sed -i /license:/d playground.cabal
+sed -i '/import: *warnings/d' playground.cabal
+rm CHANGELOG.md
 [ -x "$(command -v cabal-fmt)" ] && cabal-fmt --inplace playground.cabal
 echo "Successfully created cabal project in $PROJECT_DIR"
-$PLAYGROUND_EDITOR $PROJECT_DIR 
